@@ -20,4 +20,9 @@ import addUser from './routes/adduser.routes.js';
 
 app.use('/api/v1/users', addUser);
 
+
+app.get('/', (req, res) => {
+    res.send('Hello from server');
+})
+
 export { app };
