@@ -17,7 +17,7 @@ app.use('/api/v1/users', addUser);
 
 
 app.get('/', (req, res) => {
-    res.send('Hello from server');
+    res.send('Hello from server side!!!!!');
 })
 
 export { app };
