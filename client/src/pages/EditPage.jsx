@@ -55,7 +55,6 @@ const EditPage = () => {
         location,
         department,
       });
-      console.log("......................................");
       
       console.log(response.data);
       setLoading(false);

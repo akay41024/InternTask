@@ -23,7 +23,6 @@ const AddPage = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      console.log(".................................");
       const response = await axios.post(`/api/v1/users/add`, {
         firstname,
         lastname,
