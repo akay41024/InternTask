@@ -7,7 +7,6 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
-    base: "/vite-deploy/",
     server: {
       proxy: {
         '/api': {
