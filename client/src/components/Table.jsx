@@ -2,13 +2,15 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import { FaEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
+const apiUrl = import.meta.env.VITE_API_URL;
 const Table = () => {
 
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const response = await axios.get("api/v1/users/all");
+      const response = await axios.get(`${apiUrl}/api/v1/users/all`);
       setUsers(response.data.data);
       console.log(response.data.data);
     };

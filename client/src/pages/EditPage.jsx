@@ -4,6 +4,8 @@ import axios from "axios";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 const EditPage = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -22,7 +24,7 @@ const EditPage = () => {
  useEffect(() => {
   const fetchUser = async () => {
     try {
-      const response = await axios.get(`/api/v1/users/${id}`);
+      const response = await axios.get(`${apiUrl}/api/v1/users/${id}`);
       // Setting the fetched data to state for editing
 
       setFirstName(response.data.data.firstname);
@@ -46,7 +48,7 @@ const EditPage = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const response = await axios.patch(`/api/v1/users/edit/${id}`, {
+      const response = await axios.patch(`${apiUrl}/api/v1/users/edit/${id}`, {
         firstname,
         lastname,
         phone,

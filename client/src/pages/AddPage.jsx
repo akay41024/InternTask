@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 const AddPage = () => {
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
@@ -23,7 +25,7 @@ const AddPage = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const response = await axios.post(`/api/v1/users/add`, {
+      const response = await axios.post(`${apiUrl}/api/v1/users/add`, {
         firstname,
         lastname,
         phone,
