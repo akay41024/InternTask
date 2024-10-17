@@ -11,6 +11,13 @@ const addUser = asyncHandler(async (req, res) => {
         throw new ApiError(400, "All field required");
     }
 
+    //if phone number or email number same as existing user return error message
+
+    const existing = await User.findOne({$or: [{phone}, {email}]});
+    if(existing){
+        throw new ApiError(400, "User already exist");
+    }
+
     const user = await User.create({
         firstname,
         lastname,
@@ -49,6 +56,8 @@ const editUser = asyncHandler(async (req, res) => {
         },
         {new: true}
     );
+
+
 
     if(!user){
         throw new ApiError(400, "User not updated");

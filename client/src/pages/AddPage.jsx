@@ -23,7 +23,8 @@ const AddPage = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const response = await axios.post("api/v1/users/add", {
+      console.log(".................................");
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/users/add`, {
         firstname,
         lastname,
         phone,
@@ -31,7 +32,7 @@ const AddPage = () => {
         role,
         location,
         department,
-      });
+      });      
       console.log(response.data);
       setLoading(false);
       navigate("/");
@@ -46,6 +47,7 @@ const AddPage = () => {
   }
 
   if(error && !loading){
+    
     return <Error message={error}/>
   }
 
