@@ -54,6 +54,17 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
     $ npm install || yarn install
     $ npm run dev
 
+## DockerFile run command
+    $ git clone https://github.com/akay41024/InternTask.git
+    $ cd client
+    $ npm install || yarn install
+    $ npm run dev
+    $ cd ..
+    $ cd server
+    $ docker pull askhan1479/server-nodejs:0.0.1
+    $ docker run -d -p 3000:3000 askhan1479/server-nodejs:0.0.1
+    
+
 ## Configure app
 
 Open `server/.env.sample` then edit it with your settings. You will need:
