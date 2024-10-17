@@ -5,7 +5,6 @@ import Loader from "../components/Loader";
 import Error from "../components/Error";
 
 const apiUrl = import.meta.env.VITE_API_URL;
-
 const EditPage = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -34,6 +33,7 @@ const EditPage = () => {
       setLocation(response.data.data.location);
       setDepartment(response.data.data.department);
       setEmail(response.data.data.email);
+      
       
     } catch (error) {
       setError("Error fetching user data.", error);
