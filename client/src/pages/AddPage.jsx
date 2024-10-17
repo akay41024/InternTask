@@ -24,7 +24,7 @@ const AddPage = () => {
     try {
       setLoading(true);
       console.log(".................................");
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/users/add`, {
+      const response = await axios.post(`/api/v1/users/add`, {
         firstname,
         lastname,
         phone,

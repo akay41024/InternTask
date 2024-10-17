@@ -8,7 +8,7 @@ const addUser = asyncHandler(async (req, res) => {
     const {firstname, lastname, phone, email, role, location, department} = req.body;
     
     if(!firstname, !lastname, !phone, !email, !role, !location, !department){
-        throw new ApiError(400, "All field required");
+        throw new ApiError(401, "All field required");
     }
 
     //if phone number or email number same as existing user return error message
