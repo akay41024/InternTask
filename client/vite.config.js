@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'https://intern-task-deso.vercel.app/',
+      '/api': 'http://localhost:3000',
     },
   },
 })
