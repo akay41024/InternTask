@@ -6,12 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': {
-        target: 'https://server-nodejs-b0ly.onrender.com',
-        changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/api/, ''),
-      }
+      '/api': 'https://server-nodejs-b0ly.onrender.com',
     },
   },
 })
